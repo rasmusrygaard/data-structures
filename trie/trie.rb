@@ -18,7 +18,7 @@ class Trie
     # In particular, we should clear any node does not point to any non-nil children.
     path.zip(key.chars).reverse_each do |parent, letter|
       # If the node contains pointers, we can stop our walk.
-      break unless parent[letter].empty?      
+      break unless parent[letter].empty?
       # Otherwise, we should mark the pointer as invalid.
       parent[letter] = nil
     end
@@ -53,7 +53,7 @@ class Trie
         # We either create a new one.
         if should_create
           node[letter] = TrieNode.new
-        # Or we give up and return the path so far. 
+        # Or we give up and return the path so far.
         else
           return nil, path
         end

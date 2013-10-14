@@ -70,7 +70,7 @@ class DoublyLinkedListPQueue
 			@min = nil
 			return
 		end
-		
+
 		cur_min = @roots
 		cur = @roots.right
 		while true
