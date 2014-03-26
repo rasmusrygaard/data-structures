@@ -17,9 +17,9 @@ shared_examples_for "a lexicon" do
         it_behaves_like 'set#include?'
       end
 
-      describe '#extract_min' do
+      describe '#empty?' do
         include StringHelpers
-        it_behaves_like 'set#include?'
+        it_behaves_like 'set#empty?'
       end
 
     end

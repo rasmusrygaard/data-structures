@@ -15,13 +15,13 @@ shared_examples 'set#empty?' do
   end
 
   it 'returns false for single element sets' do
-    subject.insert(42)
+    subject.insert('abc')
     expect(subject.empty?).to be_false
   end
 
   it 'returns true after deleting last element' do
-    subject.insert(42)
-    subject.delete(42)
+    subject.insert('abc')
+    subject.delete('abc')
     expect(subject.empty?).to be_true
   end
 

@@ -16,8 +16,8 @@ shared_examples_for "a set" do
         it_behaves_like 'set#include?'
       end
 
-      describe '#extract_min' do
-        it_behaves_like 'set#include?'
+      describe '#empty?' do
+        it_behaves_like 'set#empty?'
       end
 
     end

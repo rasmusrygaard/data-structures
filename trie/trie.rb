@@ -42,6 +42,10 @@ class Trie
     not node.nil?
   end
 
+  def empty?
+    @root.empty?
+  end
+
 
   private
   def path(word, should_create=false)

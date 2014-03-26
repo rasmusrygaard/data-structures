@@ -22,4 +22,8 @@ class Lexicon
     @trie.contains?(key)
   end
 
+  def empty?
+    @trie.empty?
+  end
+
 end
