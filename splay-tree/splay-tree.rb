@@ -63,13 +63,17 @@ class SplayTree
     @root = @root.left
     # Bring the maximum element to the root of the tree
     splay(Float::INFINITY)
-    @root.right = right_subtree
+    if @root.nil?
+      @root = right_subtree
+    else
+      @root.right = right_subtree
+    end
 
     @size -= 1
   end
 
   # Returns true if the tree contains VALUE.
-  def contains?(value)
+  def include?(value)
     return false if empty?
     splay(value)
     @root.value == value
@@ -86,6 +90,7 @@ class SplayTree
   private
 
   def splay(value)
+    return if @root.nil?
     # Left and right contain nodes less than or greater than value.
     left = right = @header
     cur = @root

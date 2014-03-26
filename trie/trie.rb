@@ -4,7 +4,7 @@ class Trie
   end
 
   def insert(key, value)
-    raise ArgumentError unless key.is_a? String
+    raise ArgumentError, 'Key must be a string' unless key.is_a? String
     node, _ = path(key, true)
     node.data = value
   end

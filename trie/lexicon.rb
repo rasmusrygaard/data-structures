@@ -1,4 +1,4 @@
-require './trie.rb'
+require 'trie/trie'
 
 class Lexicon
 
@@ -10,15 +10,15 @@ class Lexicon
     @trie.insert(key, true)
   end
 
-  def remove(key)
+  def delete(key)
     @trie.remove(key)
   end
 
-  def contains_prefix?(prefix)
+  def include_prefix?(prefix)
     @trie.contains_prefix?(prefix)
   end
 
-  def contains(key)
+  def include?(key)
     @trie.contains?(key)
   end
 

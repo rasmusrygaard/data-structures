@@ -25,6 +25,7 @@ module Quicksort
     left_index = low
     right_index = high - 2
 
+    # Move from left to right moving everything less than the pivot to the left of left_index.
     while left_index <= right_index do
       if self[left_index] >= pivot
         swap!(left_index, right_index)
@@ -33,8 +34,8 @@ module Quicksort
         left_index += 1
       end
     end
+    # Swap the pivot back in place and return its index.
     swap!(high - 1, left_index)
-
     left_index
   end
 
@@ -42,11 +43,13 @@ module Quicksort
     self[a], self[b] = self[b], self[a]
   end
 
+  # Recusively sort ARRAY. Note that this method does not sort in place.
   def rec_quicksort(array)
     return array if array.empty? || array.one?
 
     pivot = array.shift
     partitioned = array.partition { |val| val < pivot }
+    # Glue both sorted arrays together with the pivot.
     rec_quicksort(partitioned.first).concat([pivot]).concat(rec_quicksort(partitioned.last))
   end
 end

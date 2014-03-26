@@ -41,7 +41,6 @@ class FibonacciHeap
 
   def extract_min
     if empty?
-      puts "extract_min on an empty queue"
       nil
     else
       min = remove_min
